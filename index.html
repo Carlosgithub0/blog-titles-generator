@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+    function generateTitles (form) {
+        
+        if (form.input.value != "")  {
+            let test = form.input.value;
+            let title1 = "Top 5 Apps Created With " + test + "in 2022"
+           document.getElementById("result1").innerHTML = title1
+
+        }
+        else {
+            alert ("You must type something!");
+        }
+
+        } 
+    </script>
+
     <title>Blog Idea Generator</title>
 </head>
 <body>
     <h1>Blog Idea Generator</h1>
-    <div>
-        <h3>Main Technology</h3>
-    <input type="text" placeholder="enter text here">
-    </div>
+    <form>
+        <h3>Main Technology</h3> 
+        <input id="input" type="text" placeholder="enter text here">
+        <button onClick="generateTitles(this.form)">Generate</button>
+    </form>
 
-    <button>Generate</button>
+<div class="results">
+<p id="result1"></p>
+<p id="result2"></p>
+<p id="result3"></p>
+</div>
 
-<script src="index.js"></script>
+<!-- Removed the external file reference for now bc it was not working.
+     <script src="index.js"></script> -->
 
 </body>
 </html>
