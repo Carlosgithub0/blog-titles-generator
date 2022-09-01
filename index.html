@@ -3,33 +3,15 @@
 <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <script>
-            const titles = [`Top 1 Apps Created With ${form.input.value} in 2022`,`Top 2 Apps Created With ${form.input.value} in 2022`, `Top 3 Apps Created With ${form.input.value} in 2022`,]
-    function generateTitles (form) {
-        
-        if (form.input.value != "")  {
-            let test = form.input.value;
-            let title1 = `Top 5 Apps Created With ${test} in 2022`
-           document.getElementById("result1").innerHTML = title1
-
-        }
-        else {
-            alert ("You must type something!");
-        }
-
-        } 
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Blog Idea Generator</title>
 </head>
 <body>
     <h1>Blog Idea Generator</h1>
-    <form onSubmit="return false";>
+    <form id="mainForm" onSubmit="return false";>
         <h3>Main Technology</h3> 
         <input id="input" type="text" placeholder="enter text here">
-        <button onClick="generateTitles(this.form)">Generate</button>
+        <button id="buttonGenerate">Generate</button>
     </form>
 
 <div class="results">
@@ -39,8 +21,7 @@
 <p id="result3"></p>
 </div>
 
-<!-- Removed the external file reference for now bc it was not working.
-     <script src="index.js"></script> -->
+<script src="index.js"></script>
 
 </body>
 </html>
