@@ -10,11 +10,21 @@ function generateTitles (form) {
     }
 
     /* List of titles */
-    const titles = [`Top 1 Apps Created With ${form.input.value} in 2022`,
-    `Top 2 Apps Created With ${form.input.value} in 2022`,
-    `Top 3 Apps Created With ${form.input.value} in 2022`]
+    const titles = [`Top 10 Apps Created With ${form.input.value} in 2022`,
+    `How Safe Is Your ${form.input.value} from [Threat]?`,
+    `Warning Signs That Your ${form.input.value} Project Project is in Danger`,
+    `Can We Really Trust ${form.input.value} Developers?`,
+    `The Shocking Truth about ${form.input.value}`,
+    `Don't Gamble with Your ${form.input.value} Project: 7 Ways to Protect Yourself`,
+    `Lies ${form.input.value} Developers Like to Tell`,
+    `13 Things Your ${form.input.value} Developers Won’t Tell You`,
+    `5 Little-Known Factors That Could Affect Your ${form.input.value} Project`,
+    `${form.input.value} Alert: The New [Threat] Scam to Avoid`]
 
-    /* Random generator */
+
+
+    /* Random no generator 
+    To do - Make unique */
     function generateRandomIntegerInRange(min=0, max=titles.length-1) {
         
         return Math.floor(Math.random() * (max - min + 1)) + min;
