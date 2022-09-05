@@ -31,40 +31,43 @@ function generateTitles (form) {
 
     if (form.input.value != "")  {
        let inputTech = form.input.value;
-       let paragraph = document.createElement("p");
        let indexStorage = [];
        
 
        /* Generate each title */
         for (let index = 0; index <= 2; index++) {
             let number = generateRandomIntegerInRange();
-            console.log("number without repeated function " + number); 
 
             if (indexStorage.length===0) {
                 indexStorage.push(number);
             }
             else {
 
-            indexStorage.map(num => {
                 if(!indexStorage.includes(number)){
                 indexStorage.push(number);
-                console.log("number with repeated function " + number); 
-                // console.log("indexStorage " + indexStorage); 
 
                 }
                 else
                 {         
-                    number = generateRandomIntegerInRange();
-                    indexStorage.push(number);        
+                    while(indexStorage.includes(number))
+                    {
+                        number = generateRandomIntegerInRange();    
+                    }      
+                    indexStorage.push(number);
+
                 }
-            })
             };
 
-            console.log("indexStorage " + indexStorage); 
-
+            /* To do - Debug duplicated list */
+            indexStorage.map(num => {
+            let paragraph = document.createElement("p");
+            paragraph.innerHTML = titles[num];
             paragraph.setAttribute("id",`result${index}`);
-            document.querySelector(".results").appendChild(paragraph)
-        }
+            document.querySelector(".results").appendChild(paragraph);
+            });
+        };
+
+        console.log("indexStorage " + indexStorage); 
 
    }
 
