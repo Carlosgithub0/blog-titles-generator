@@ -22,24 +22,47 @@ function generateTitles (form) {
     `${form.input.value} Alert: The New [Threat] Scam to Avoid`]
 
 
-
-    /* Random no generator 
-    To do - Make unique */
+    /* Random no generator */
     function generateRandomIntegerInRange(min=0, max=titles.length-1) {
         
         return Math.floor(Math.random() * (max - min + 1)) + min;
-            
+        
     }
-    
+
     if (form.input.value != "")  {
        let inputTech = form.input.value;
-    
+       let paragraph = document.createElement("p");
+       let indexStorage = [];
+       
+
        /* Generate each title */
         for (let index = 0; index <= 2; index++) {
+            let number = generateRandomIntegerInRange();
+            console.log("number without repeated function " + number); 
 
-            let paragraph = document.createElement("p");
+            if (indexStorage.length===0) {
+                indexStorage.push(number);
+            }
+            else {
+
+            indexStorage.map(num => {
+                if(!indexStorage.includes(number)){
+                indexStorage.push(number);
+                console.log("number with repeated function " + number); 
+                // console.log("indexStorage " + indexStorage); 
+
+                }
+                else
+                {         
+                    number = generateRandomIntegerInRange();
+                    indexStorage.push(number);        
+                }
+            })
+            };
+
+            console.log("indexStorage " + indexStorage); 
+
             paragraph.setAttribute("id",`result${index}`);
-            paragraph.innerHTML = titles[generateRandomIntegerInRange()];
             document.querySelector(".results").appendChild(paragraph)
         }
 
@@ -49,5 +72,7 @@ function generateTitles (form) {
        alert ("You must type something!");
    }
 } 
+
+
 
 button.addEventListener("click",()=>generateTitles(form))
