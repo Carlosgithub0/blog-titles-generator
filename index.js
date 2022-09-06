@@ -1,18 +1,23 @@
 const form = document.querySelector("#mainForm");
 const button = document.querySelector("#buttonGenerate")
 
-
 function generateTitles (form) {
-    /* Clean up */
+    /* Cleanes up on every submit */
     const results = document.querySelector(".results");
     while (results.firstChild)  {
         results.removeChild(results.lastChild);
     }
 
+    // Note 3 - Added capitalization
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    form.input.value = capitalizeFirstLetter(form.input.value);
+
     /* List of titles */
     const titles = [`Top 10 Apps Created With ${form.input.value} in 2022`,
     `How Safe Is Your ${form.input.value} from [Threat]?`,
-    `Warning Signs That Your ${form.input.value} Project Project is in Danger`,
+    `Warning Signs That Your ${form.input.value} Project is in Danger`,
     `Can We Really Trust ${form.input.value} Developers?`,
     `The Shocking Truth about ${form.input.value}`,
     `Don't Gamble with Your ${form.input.value} Project: 7 Ways to Protect Yourself`,
@@ -21,18 +26,17 @@ function generateTitles (form) {
     `5 Little-Known Factors That Could Affect Your ${form.input.value} Project`,
     `${form.input.value} Alert: The New [Threat] Scam to Avoid`]
 
-
-    /* Random no generator */
+    /* Random number generator */
     function generateRandomIntegerInRange(min=0, max=titles.length-1) {
         
         return Math.floor(Math.random() * (max - min + 1)) + min;
         
     }
 
+    // First run if field not empty
     if (form.input.value != "")  {
-       let inputTech = form.input.value;
-       let indexStorage = [];
-       
+        let inputTech = form.input.value;
+        let indexStorage = [];
 
        /* Generate each title */
         for (let index = 0; index <= 2; index++) {
@@ -58,16 +62,25 @@ function generateTitles (form) {
                 }
             };
 
-            /* To do - Debug duplicated list */
+
+            /* Note 1 - Duplicated list bug fixed by removing the map function 
             // indexStorage.map(num => {
             let paragraph = document.createElement("p");
-            paragraph.innerHTML = titles[number];
+            paragraph.innerHTML = `${titles[number]}`;
             paragraph.setAttribute("id",`result${index}`);
             document.querySelector(".results").appendChild(paragraph);
-            // });
+            // });*/
+
+            
+            let paragraph = document.createElement("p");
+            // Note 2 - Added char count
+            paragraph.innerHTML = `${titles[number]} (${titles[number].length+inputTech.length} chars)`;
+            paragraph.setAttribute("id",`result${index}`);
+            document.querySelector(".results").appendChild(paragraph);
+
         };
 
-        console.log("indexStorage " + indexStorage); 
+
 
    }
 
@@ -75,7 +88,5 @@ function generateTitles (form) {
        alert ("You must type something!");
    }
 } 
-
-
 
 button.addEventListener("click",()=>generateTitles(form))
