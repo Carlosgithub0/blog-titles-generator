@@ -59,12 +59,12 @@ function generateTitles (form) {
             };
 
             /* To do - Debug duplicated list */
-            indexStorage.map(num => {
+            // indexStorage.map(num => {
             let paragraph = document.createElement("p");
-            paragraph.innerHTML = titles[num];
+            paragraph.innerHTML = titles[number];
             paragraph.setAttribute("id",`result${index}`);
             document.querySelector(".results").appendChild(paragraph);
-            });
+            // });
         };
 
         console.log("indexStorage " + indexStorage); 
