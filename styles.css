@@ -1,2 +1,11 @@
 h1 {font-size: 200%;}
+
 .class p {font-size:300%}
+
+.inputWrapper {
+    display:flex;
+}
+
+.inputWrapper input[type="text"] {
+    margin:10px;
+}

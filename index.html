@@ -8,10 +8,15 @@
 </head>
 <body>
     <h1>Blog Idea Generator</h1>
-    <form id="mainForm" onSubmit="return false";>
-        <h3>Main Technology</h3> 
-        <input id="input" type="text" placeholder="enter text here">
+    <div id="mainForm" onSubmit="return false";>
+        <div class="inputWrapper">
+        <h3>Main Technology*</h3> 
+        <input id="inputTechnology" type="text" placeholder="enter text here">
+        <h3>Industry</h3> 
+        <input id="inputIndustry" type="text" placeholder="enter text here">
+        </div>
         <button id="buttonGenerate">Generate</button>
+
     </form>
 
 <h2>Results</h2>
