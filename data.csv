@@ -1,0 +1,156 @@
+Technology,Type,Category,State,Substitution
+TypeScript,Language,Frontend,Adopt,
+SCSS,Language,Frontend,Trial,SASS
+JavaScript,Language,Frontend,Adopt,TypeScript
+CSS,Language,Frontend,Adopt,
+SASS,Language,Frontend,Trial,LESS
+HTML,Language,Frontend,Adopt,Pug
+React.js,Framework,Frontend,Adopt,"Vue.js, Angular"
+Vue.js,Framework,Frontend,Adopt,"React.js, Angular"
+Angular,Framework,Frontend,Adopt,"React.js, Vue.js"
+React Native,Framework,Frontend,Adopt,"NativeScript, Flutter, Vue Native"
+Nuxt.js,Framework,Frontend,Trial,Next.js
+AngularJS,Framework,Frontend,Hold,Angular
+MobX,Framework,Frontend,Assess,Redux
+React XP,Framework,Frontend,Adopt,
+eslint,Tool / Specification,Frontend,Adopt,
+Webpack,Tool / Specification,Frontend,Adopt,
+Babel,Tool / Specification,Frontend,Adopt,
+yarn,Tool / Specification,Frontend,Adopt,npm
+Redux,Library,Frontend,Adopt,Vuex
+GraphQL,Library,Frontend,Adopt,REST
+Jest,Library,Frontend,Adopt,
+Pug,Library,Frontend,Adopt,HTML
+Vuex,Library,Frontend,Adopt,Redux
+Cypress,Library,Frontend,Adopt,
+axios,Library,Frontend,Assess,
+Formik,Library,Frontend,Trial,
+NGXS,Library,Frontend,Trial,
+styled-components,Library,Frontend,Adopt,
+Bootstrap,Library,Frontend,Assess,
+D3,Library,Frontend,Assess,
+enzyme,Library,Frontend,Hold,Jest
+JQuery,Library,Frontend,Hold,"React.js, Vue.js. Angular"
+lodash,Library,Frontend,Assess,
+reselect,Library,Frontend,Trial,
+draft-js,Library,Frontend,Hold,
+Gatsby,Library,Frontend,Assess,
+lerna,Library,Frontend,Assess,
+moment,Library,Frontend,Trial,
+react-structured-data,Library,Frontend,Assess,
+Redux Saga,Library,Frontend,Trial,
+RxJS,Library,Frontend,Assess,
+Ruby,Language,Backend,Adopt,"Python, Node.js, Golang"
+Node.js,Language,Backend,Adopt,"Python, Ruby, Golang"
+Golang,Language,Backend,Adopt,"Python, Ruby, Node.js"
+Python,Language,Backend,Adopt,"Ruby, Node.js, Golang"
+Elixir,Language,Backend,Trial,Ruby
+Ruby On Rails,Framework,Backend,Adopt,Django
+Django,Framework,Backend,Adopt,Ruby On Rails
+Phoenix,Framework,Backend,Trial,Ruby On Rails
+Sanic,Framework,Backend,Assess,
+PostgreSQL,Database,Backend,Adopt,MySQL
+Redis,Database,Backend,Adopt,
+MongoDB,Database,Backend,Adopt,Elasticsearch
+Elasticsearch,Database,Backend,Adopt,
+Firebase,Database,Backend,Trial,
+MySQL,Database,Backend,Hold,PostgreSQL
+Neo4j,Database,Backend,Assess,Neptune
+Express,Library,Backend,Adopt,
+Shrine,Library,Backend,Trial,
+RSpec,Library,Backend,Adopt,
+TypeORM,Library,Backend,Assess,
+Administrate,Library,Backend,Adopt,KeystoneJS
+apipie,Library,Backend,Assess,
+dry-rb,Library,Backend,Adopt,
+Ghost,Library,Backend,Trial,KeystoneJS
+graphiti,Library,Backend,Assess,
+graphql-ruby,Library,Backend,Adopt,
+gRPC,Library,Backend,Adopt,
+JWT,Library,Backend,Adopt,
+puma,Library,Backend,Adopt,
+rails_event_store,Library,Backend,Assess,
+sequelize,Library,Backend,Assess,
+stripe,Library,Backend,Assess,
+Sidekiq,Tool / Specification,Backend,Adopt,
+REST,Tool / Specification,Backend,Adopt,GraphQL
+JSON:API,Tool / Specification,Backend,Adopt,
+Rubocop,Tool / Specification,Backend,Adopt,
+CircleCI,,Dev Ops,Adopt,
+Kubernetes,,Dev Ops,Trial,
+Nginx,,Dev Ops,Adopt,
+Letsencrypt,,Dev Ops,Adopt,
+Linkerd,,Dev Ops,Assess,
+Redis,,Dev Ops,Adopt,
+Docker,,Dev Ops,Adopt,
+ELK,,Dev Ops,Trial,
+Minio,,Dev Ops,Assess,
+Travis,,Dev Ops,Hold,"CircleCI, GitHub Actions"
+Terraform,,Dev Ops,Trial,
+Ansible,,Dev Ops,Trial,
+New Relic,,Dev Ops,Assess,
+Prometheus,,Dev Ops,Assess,
+Docker swarm,,Dev Ops,Hold,Kubernetes
+logrocket,,Dev Ops,Hold,
+Makefile,,Dev Ops,Assess,
+Consul,,Dev Ops,Trial,etcd
+Nomad,Tool / Specification,Dev Ops,Assess,Kubernetes
+Github Actions,,Dev Ops,Assess,
+Sentry,,Dev Ops,Adopt,
+Amazon ECR,,Dev Ops,Assess,
+Ansible-vault,,Dev Ops,Assess,
+Buildpacks,,Dev Ops,Trial,
+Capistrano,,Dev Ops,Hold,"CircleCI, GitHub Actions"
+CodeCov,,Dev Ops,Assess,
+Docker-compose,,Dev Ops,Adopt,
+Google Cloud Build,,Dev Ops,Assess,
+Grafana,,Dev Ops,Trial,
+Kibana,,Dev Ops,Assess,
+pm2,,Dev Ops,Assess,
+Sidekiq,,Dev Ops,Adopt,
+Codeship,,Dev Ops,Hold,"CircleCI, GitHub Actions"
+PostgreSQL,,Dev Ops,Adopt,
+Heroku,,Dev Ops,Adopt,
+traefik,,Dev Ops,Assess,
+GCP,,Hosting / Cloud,Assess,
+Netlify,,Hosting / Cloud,Trial,
+AWS EC2,,Hosting / Cloud,Trial,
+AWS Fargate,,Hosting / Cloud,Trial,
+AWS ECS,,Hosting / Cloud,Trial,
+AWS App Runner,,Hosting / Cloud,Assess,Heroku
+Mongo Cloud,,Hosting / Cloud,Hold,
+Heroku,,Hosting / Cloud,Adopt,
+Azure,,Hosting / Cloud,Assess,
+AWS,,Hosting / Cloud,Trial,
+AWS S3,,Hosting / Cloud,Adopt,
+Rackspace,,Hosting / Cloud,Assess,
+Zeit,,Hosting / Cloud,Hold,
+Cloudinary,,Hosting / Cloud,Hold,
+DigitalOcean,,Hosting / Cloud,Hold,
+AWS RDS,,Hosting / Cloud,Assess,
+AWS SQS,,Hosting / Cloud,Assess,
+Deno,,Backend,Assess,
+Spree,,Backend,Assess,
+Vendure,,Backend,Assess,
+Saleor.io,,Backend,Assess,
+Vue Storefront,,Frontend,Assess,
+Reaction,,Backend,Hold,"Saleor.io, Spree, Vue Storefront"
+ExpressCart,,Backend,Hold,"Saleor.io, Spree, Vue Storefront"
+PWA,Tool / Specification,Frontend,Assess,"React Native, Native Script, React XP"
+NativeScript,Framework,Frontend,Assess,React Native
+Gatsby,Tool / Specification,Frontend,Trial,
+KeystoneJS,,Backend,Trial,
+Factor,,Frontend,Hold,KeystoneJS
+ObjectiveC,,Frontend,Assess,
+Flutter,,Frontend,Assess,
+DarkLang,,Hosting / Cloud,Assess,
+Cordova,,Frontend,Assess,
+LESS,,Frontend,Hold,SASS
+Next.js,,Frontend,Trial,Nuxt.js
+npm,Tool / Specification,Frontend,Adopt,
+Selenium,,Frontend,Hold,Cypress
+Kretes.dev,,Frontend,Assess,
+RabbitMQ,,Backend,Assess,
+AWS Neptune,,Hosting / Cloud,Assess,Neo4j
+AWS Lambda,,Hosting / Cloud,Assess,
+Vue Native,,Frontend,Assess,React Native
