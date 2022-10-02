@@ -10,11 +10,48 @@
     <h1>Blog Idea Generator</h1>
     <div id="mainForm" onSubmit="return false";>
         <div class="inputWrapper">
-        <h3>Main Technology*</h3> 
-        <input id="inputTechnology" type="text" placeholder="enter text here">
-        <h3>Industry</h3> 
-        <input id="inputIndustry" type="text" placeholder="enter text here">
-        </div>
+            <h3>Main Technology</h3> 
+            <div class="tooltip">
+            *
+            <span class="tooltiptext">This field is required</span>
+            </div>
+        <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection">
+        <datalist id="technologySelection">
+            <option value="Python"></option>
+            <option value="JavaScript"></option>
+            <option value="React"></option>
+            <option value="Vue"></option>
+            <option value="Ruby On Rails"></option>
+            <option value="Angular"></option>
+            <option value="Elixir"></option>
+            <option value="Golang"></option>
+            </datalist>
+        <h3>Industry</h3>  
+        <input id="inputIndustry" type="text" placeholder="write or pick industry" list="industrySelection">
+        <datalist id="industrySelection">
+            <option value="Healthcare"></option>
+            <option value="Web3"></option>
+            <option value="PropTech"></option>
+            <option value="IT"></option>
+            <option value="Crypto"></option>
+            <option value="eCommerce"></option>
+            <option value="Restaurants"></option>
+            <option value="Hotels"></option>
+            </datalist>
+
+
+    </div>
+    <div id="formPersona">
+        <h3>Persona</h3> 
+        <div id="formPersonaControl">
+        <input id="inputPersona" type="range" min="0" max="2" list="tickmarks" value="1">
+        <datalist id="tickmarks">
+            <option value="0" label="Business"></option>
+            <option value="1" label="All"></option>
+            <option value="2" label="Tech-savvy"></option>
+        </datalist>
+    </div>
+    </div>
         <button id="buttonGenerate">Generate</button>
 
     </form>
@@ -25,6 +62,7 @@
 <p id="result2"></p>
 <p id="result3"></p>
 </div>
+<div id="catBox"></div>
 
 <script src="index.js"></script>
 
