@@ -49,8 +49,7 @@ function generateTitles (tech,industry,persona) {
     `What This Case Study Can Teach Us About ${tech.value}${industry.value}`,
     `Do You Make These ${genRanNum()} ${tech.value} Mistakes${industry.value}?`,
     `${genRanNum()} ${tech.value} Mistakes That Can Derail Your Project`,
-    `${genRanNum()} ${tech.value} Mistakes That Make You Look Like a Newbie`,
-]
+    `${genRanNum()} ${tech.value} Mistakes That Make You Look Like a Newbie`]
 
     // Random number generator for titles
     function generateRandomIntegerInRange(min=0, max=titles1.length-1) {
@@ -65,9 +64,9 @@ function generateTitles (tech,industry,persona) {
     // First run if field not empty
     if (tech.value != "")  {
         let inputTech = tech.value;
+        let button = document.querySelector("#buttonGenerate");
+        button.innerHTML = "Generate More"
        
-
-
        // Generate each title 
         for (let index = 0; index <= 2; index++) {
             let number = generateRandomIntegerInRange();
@@ -76,16 +75,18 @@ function generateTitles (tech,industry,persona) {
             paragraph.innerHTML = `${titles1[number]} (${titles1[number].length+inputTech.length} chars)`;
             paragraph.setAttribute("id",`result${index}`);
             document.querySelector(".results").appendChild(paragraph);
-            titles1.splice(number,1); // removes one index
-
-           
+            titles1.splice(number,1); // removes one index       
             
         };
 
    }
 
    else {
-       alert ("You must write down a technology!"); // Tech can't be empty
+    //    alert ("You must write down a technology!"); // Tech can't be empty
+        let inputTechnology = document.querySelector("#inputTechnology");
+        inputTechnology.placeholder = "Hongry feed me techs ;("
+        inputTechnology.className = "blinkMe"
+        
    }
 } 
 

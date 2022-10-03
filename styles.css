@@ -7,7 +7,7 @@ h1 {font-size: 200%;}
 }
 
 .inputWrapper input[type="text"] {
-    margin:10px;
+    margin:15px;
 }
 
 #formPersonaControl{
@@ -21,14 +21,32 @@ h1 {font-size: 200%;}
     justify-content:space-between;
 }
 
-#mainForm{
-    background-color: rgba(47, 255, 64, 0.247);
+b ody{
+  background-color: azure;
 }
 
 #formPersona{
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.575);
 opacity: 25%;}
 
+/* VALIDATION */
+
+input:required:invalid {
+  border-color: #c00000;
+}
+
+.blinkMe {
+  background-color: rgba(255, 255, 0, 0.404);
+  animation: blinker 0.5s linear 1;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* TOOLTIP */
 /* Tooltip container */
 .tooltip {
   position: relative;
