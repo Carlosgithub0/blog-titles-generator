@@ -11,9 +11,11 @@ body{
     display:flex;
 }
 
-input[type="text"] {
+input[type="text"]{
     margin:15px;
 }
+
+input[type="range"] {}
 
 #formPersonaControl{
     display:flex;
@@ -27,8 +29,8 @@ input[type="text"] {
 }
 
 #formPersona{
-    background-color: rgba(0, 0, 0, 0.575);
-    opacity: 25%;}
+display:flex;
+}
 
 .fader {
 animation: fader;
