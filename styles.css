@@ -2,11 +2,16 @@ h1 {font-size: 200%;}
 
 .class p {font-size:300%}
 
-.inputWrapper {
+body{
+  background-color: azure;
+}
+
+/* FORM */ 
+.inputAllWrapper .inputTechWrapper, .inputExtrasWrapper {
     display:flex;
 }
 
-.inputWrapper input[type="text"] {
+input[type="text"] {
     margin:15px;
 }
 
@@ -21,14 +26,21 @@ h1 {font-size: 200%;}
     justify-content:space-between;
 }
 
-b ody{
-  background-color: azure;
-}
-
 #formPersona{
     background-color: rgba(0, 0, 0, 0.575);
-opacity: 25%;}
+    opacity: 25%;}
 
+.fader {
+animation: fader;
+animation-duration: 0.2s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+}
+
+@keyframes fader {
+  0%   {opacity:0%}
+  100%  {opacity: 100;}
+}
 /* VALIDATION */
 
 input:required:invalid {
@@ -36,14 +48,17 @@ input:required:invalid {
 }
 
 .blinkMe {
+  animation-play-state: paused;
   background-color: rgba(255, 255, 0, 0.404);
-  animation: blinker 0.5s linear 1;
+  animation: blinker 0.3s linear 1;
+}
+
+.paused {
+  animation-play-state: paused;
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 0.2;
-  }
+  50% {opacity: 0.2;}
 }
 
 /* TOOLTIP */
@@ -63,7 +78,7 @@ input:required:invalid {
   padding: 5px 0;
   border-radius: 6px;
  
-  /* Position the tooltip text - see examples below! */
+  /* Position the tooltip text  */
   position: absolute;
   z-index: 1;
 }

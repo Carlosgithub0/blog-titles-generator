@@ -9,37 +9,63 @@
 <body>
     <h1>Blog Idea Generator</h1>
     <div id="mainForm" onSubmit="return false";>
-        <div class="inputWrapper">
+        <div class="inputAllWrapper">
+        <div class="inputTechWrapper">
             <h3>Main Technology</h3> 
             <div class="tooltip">
             *
             <span class="tooltiptext">This field is required</span>
             </div>
-        <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection" required>
+        <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection" required class="blinkMe paused">
         <datalist id="technologySelection">
             <option value="Angular"></option>
             <option value="Elixir"></option>
+            <option value="Flutter"></option>
             <option value="Golang"></option>
             <option value="JavaScript"></option>
+            <option value="Node"></option>
             <option value="Python"></option>
             <option value="React"></option>
             <option value="Ruby On Rails"></option>
             <option value="Vue"></option>
         
             </datalist>
+        </div>
+        <div class="inputExtrasWrapper">
         <h3>Industry</h3>  
         <input id="inputIndustry" type="text" placeholder="write or pick industry" list="industrySelection">
         <datalist id="industrySelection">
-            <option value="Healthcare"></option>
-            <option value="Web3"></option>
-            <option value="PropTech"></option>
-            <option value="IT"></option>
             <option value="Crypto"></option>
             <option value="eCommerce"></option>
+            <option value="Healthcare"></option>
+            <option value="HR Tech"></option>
+            <option value="Hospitality"></option>
+            <option value="IT"></option>
+            <option value="PropTech"></option>
             <option value="Restaurants"></option>
-            <option value="Hotels"></option>
+            <option value="Web3"></option>
             </datalist>
-    </div>
+         <h3>Hero</h3>  
+        <input id="inputHero" type="text" placeholder="write or pick hero" list="heroSelection">
+        <datalist id="heroSelection">
+            <option value="My Cat"></option>
+            <option value="Your Cat"></option>
+            <option value="Bill Gates"></option>
+            <option value="Ada Lovelace"></option>
+            <option value="Evie"></option>
+            <option value="Malu"></option>
+            <option value="Ada Lovelace"></option>
+            </datalist>
+        <h3>Threat</h3>  
+        <input id="inputThreat" type="text" placeholder="write or pick threat" list="threatSelection">
+        <datalist id="threatSelection">
+            <option value="Cyberattacks"></option>
+            <option value="Compliance"></option>
+            <option value="Financial"></option>
+            <option value="Reputation"></option>
+            </datalist>    
+
+        </div>
     <div id="formPersona">
         <h3>Persona</h3> 
         <div id="formPersonaControl">
@@ -49,6 +75,7 @@
             <option value="1" label="All"></option>
             <option value="2" label="Tech-savvy"></option>
         </datalist>
+    </div>
     </div>
     </div>
         <button id="buttonGenerate">Generate</button>
