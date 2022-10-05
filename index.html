@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Blog Idea Generator</title>
 </head>
-<body>
+<body>  
     <h1>Blog Idea Generator</h1>
     <div id="mainForm" onSubmit="return false";>
         <div class="inputAllWrapper">
         <div class="inputTechWrapper">
-            <h3>Main Technology</h3> 
+            <h3>Technology</h3> 
             <div class="tooltip">
             *
             <span class="tooltiptext">This field is required</span>
             </div>
-        <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection" required class="blinkMe paused">
+        <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection" autofocus required class="blinkMe paused">
         <datalist id="technologySelection">
             <option value="Angular"></option>
             <option value="Elixir"></option>
@@ -79,7 +79,6 @@
     </div>
     </div>
         <button id="buttonGenerate">Generate</button>
-
     </form>
 
 <h2>Results</h2>
