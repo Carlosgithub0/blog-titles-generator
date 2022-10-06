@@ -1,3 +1,8 @@
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
 h1 {font-size: 200%;}
 
 .class p {font-size:300%}
@@ -7,20 +12,25 @@ body{
 }
 
 /* FORM */ 
-.inputAllWrapper .inputTechWrapper, .inputExtrasWrapper {
+#mainForm, .inputAllWrapper, .inputTechWrapper, .inputExtrasWrapper,  .headerAllWrapper, .headerTechnologyWrapper, .formWrapper, .results, .resultsWrapper {
     display:flex;
 }
 
-input[type="text"]{
-    margin:15px;
+.headerAllWrapper, .headerTechnologyWrapper, .inputAllWrapper, .inputExtrasWrapper, .results, .resultsWrapper
+{
+  flex-direction: column;
 }
 
-input[type="range"] {}
+.headerPicker, .headerResults, input[type="text"]{
+    margin:15px;
+}
 
 #formPersonaControl{
     display:flex;
     flex-direction:column;
-    max-width:300px;
+    width: 200px;
+    margin:15px;
+
 }
 
 #tickmarks{
@@ -61,6 +71,17 @@ input:required:invalid {
 
 @keyframes blinker {
   50% {opacity: 0.2;}
+}
+
+
+/* RESULTS */
+.resultsWrapper
+{background-color: rgba(0, 128, 128, 0.137);
+min-width: 600px;
+margin-left: 15px;}
+
+.results{
+margin-left: 15px;
 }
 
 /* TOOLTIP */
