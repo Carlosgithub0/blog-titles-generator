@@ -21,6 +21,9 @@ function generateTitles(tech, industry, persona, hero, threat) {
     document.querySelector(".results").classList.remove("fader");
   }
 
+// If Industry is not empty, adds "In". Just once
+  industry.value != "" && !industry.value.includes("In") ? industry.value = ` In ` + industry.value: null;
+
   // Capitalizes input
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -30,31 +33,31 @@ function generateTitles(tech, industry, persona, hero, threat) {
 
   // List of titles
   const titleListTech = [
-    `Top ${genRanNum()} Apps Created With ${tech.value} in 2022 ${"In "+industry.value}`,
-    `${genRanNum()} Warning Signs That Your ${tech.value} Project is in Danger ${"In "+industry.value}`,
-    `${genRanNum()} Things Your ${tech.value} Developers Won’t Tell You ${"In "+industry.value}`,
-    `${genRanNum()} Little-Known Factors That Could Affect Your ${tech.value} Project ${"In "+industry.value}`,
-    `${tech.value} Alert: The New ${threat.value} to Avoid ${"In "+industry.value}`,
+    `Top ${genRanNum()} Apps Created With ${tech.value} in 2022 ${industry.value}`,
+    `${genRanNum()} Warning Signs That Your ${tech.value} Project is in Danger ${industry.value}`,
+    `${genRanNum()} Things Your ${tech.value} Developers Won’t Tell You ${industry.value}`,
+    `${genRanNum()} Little-Known Factors That Could Affect Your ${tech.value} Project ${industry.value}`,
+    `${tech.value} Alert: The New ${threat.value} to Avoid ${industry.value}`,
     `Can’t Keep Up? ${genRanNum()} Ways to Simplify Your ${tech.value} Workload`, 
     `How to Take Charge of Your Day In ${tech.value}`,
     `${genRanNum()} Shortcuts for Completing Tedious ${tech.value} Tasks in Record Time`,
-    `${genRanNum() * 5} Hacks: A Cheat Sheet for ${tech.value} ${"In "+industry.value}`,
+    `${genRanNum() * 5} Hacks: A Cheat Sheet for ${tech.value} ${industry.value}`,
     `Use ${tech.value} Like ${hero.value}: ${genRanNum()} Ways`,
-    `${hero.value+"'s"} Top ${genRanNum()} Tips for ${tech.value} ${"In "+industry.value}`,
-    `${genRanNum()} Secrets of Microsoft ${tech.value} Developers ${"In "+industry.value}`,
-    `Do You Make These ${genRanNum()} ${tech.value} Mistakes ${"In "+industry.value}?`,
+    `${hero.value+"'s"} Top ${genRanNum()} Tips for ${tech.value} ${industry.value}`,
+    `${genRanNum()} Secrets of Microsoft ${tech.value} Developers ${industry.value}`,
+    `Do You Make These ${genRanNum()} ${tech.value} Mistakes ${industry.value}?`,
     `${genRanNum()} ${tech.value} Mistakes That Make You Look Like a Newbie`,
   ];
 
   const titleListBusiness = [
-   `Get Rid of This ${tech.value} ${threat.value} Risk ${"In "+industry.value} Once and for All`,
-   `What This Case Study Can Teach Us About ${tech.value} ${"In "+industry.value}`,
+   `Get Rid of This ${tech.value} ${threat.value} Risk ${industry.value} Once and for All`,
+   `What This Case Study Can Teach Us About ${tech.value} ${industry.value}`,
    `${genRanNum()} ${tech.value} Mistakes That Can Derail Your Project`,
-   `The Shocking Truth About ${tech.value}  ${"In "+industry.value}`,
-   `Don't Gamble with Your ${tech.value} Project:  ${genRanNum()} Ways to Protect Yourself ${"In "+industry.value}`,
-   `Can We Really Trust ${tech.value} Developers ${"In "+industry.value}?`,
-   `Lies ${tech.value} Developers Like to Tell ${"In "+industry.value}`,
-   `How Safe Is Your ${tech.value} Stack from ${threat.value} ${"In "+industry.value}?`,
+   `The Shocking Truth About ${tech.value}  ${industry.value}`,
+   `Don't Gamble with Your ${tech.value} Project:  ${genRanNum()} Ways to Protect Yourself${industry.value}`,
+   `Can We Really Trust ${tech.value} Developers ${industry.value}?`,
+   `Lies ${tech.value} Developers Like to Tell ${industry.value}`,
+   `How Safe Is Your ${tech.value} Stack from ${threat.value}${industry.value}?`,
 
   ];
 
