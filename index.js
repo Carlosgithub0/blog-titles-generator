@@ -14,11 +14,11 @@ function generateTitles(tech, industry, persona, hero, threat) {
 
   
   // Cleans up on every submit + resets animations
-  const results = document.querySelector(".results");
+  const results = document.querySelector(".resultsList");
   while (results.firstChild) {
     results.removeChild(results.lastChild);
-    void document.querySelector(".results").offsetWidth;
-    document.querySelector(".results").classList.remove("fader");
+    void document.querySelector(".resultsList").offsetWidth;
+    document.querySelector(".resultsList").classList.remove("fader");
   }
 
 // If Industry is not empty, adds "In". Just once
@@ -33,19 +33,19 @@ function generateTitles(tech, industry, persona, hero, threat) {
 
   // List of titles
   const titleListTech = [
-    `Top ${genRanNum()} Apps Created With ${tech.value} in 2022 ${industry.value}`,
-    `${genRanNum()} Warning Signs That Your ${tech.value} Project is in Danger ${industry.value}`,
-    `${genRanNum()} Things Your ${tech.value} Developers Won’t Tell You ${industry.value}`,
-    `${genRanNum()} Little-Known Factors That Could Affect Your ${tech.value} Project ${industry.value}`,
+    `Top ${genRanNum()} Apps Created With ${tech.value} in 2022${industry.value}`,
+    `${genRanNum()} Warning Signs That Your ${tech.value} Project is in Danger${industry.value}`,
+    `${genRanNum()} Things Your ${tech.value} Developers Won’t Tell You${industry.value}`,
+    `${genRanNum()} Little-Known Factors That Could Affect Your ${tech.value} Project${industry.value}`,
     `${tech.value} Alert: The New ${threat.value} to Avoid ${industry.value}`,
     `Can’t Keep Up? ${genRanNum()} Ways to Simplify Your ${tech.value} Workload`, 
     `How to Take Charge of Your Day In ${tech.value}`,
     `${genRanNum()} Shortcuts for Completing Tedious ${tech.value} Tasks in Record Time`,
-    `${genRanNum() * 5} Hacks: A Cheat Sheet for ${tech.value} ${industry.value}`,
+    `${genRanNum() * 5} Hacks: A Cheat Sheet for ${tech.value}${industry.value}`,
     `Use ${tech.value} Like ${hero.value}: ${genRanNum()} Ways`,
-    `${hero.value+"'s"} Top ${genRanNum()} Tips for ${tech.value} ${industry.value}`,
-    `${genRanNum()} Secrets of Microsoft ${tech.value} Developers ${industry.value}`,
-    `Do You Make These ${genRanNum()} ${tech.value} Mistakes ${industry.value}?`,
+    `${hero.value+"'s"} Top ${genRanNum()} Tips for ${tech.value}${industry.value}`,
+    `${genRanNum()} Secrets of Microsoft ${tech.value} Developers${industry.value}`,
+    `Do You Make These ${genRanNum()} ${tech.value} Mistakes${industry.value}?`,
     `${genRanNum()} ${tech.value} Mistakes That Make You Look Like a Newbie`,
   ];
 
@@ -55,8 +55,8 @@ function generateTitles(tech, industry, persona, hero, threat) {
    `${genRanNum()} ${tech.value} Mistakes That Can Derail Your Project`,
    `The Shocking Truth About ${tech.value}  ${industry.value}`,
    `Don't Gamble with Your ${tech.value} Project:  ${genRanNum()} Ways to Protect Yourself${industry.value}`,
-   `Can We Really Trust ${tech.value} Developers ${industry.value}?`,
-   `Lies ${tech.value} Developers Like to Tell ${industry.value}`,
+   `Can We Really Trust ${tech.value} Developers${industry.value}?`,
+   `Lies ${tech.value} Developers Like to Tell${industry.value}`,
    `How Safe Is Your ${tech.value} Stack from ${threat.value}${industry.value}?`,
 
   ];
@@ -66,13 +66,11 @@ function generateTitles(tech, industry, persona, hero, threat) {
 
   switch (persona.value) {
     case "0": titleListSelected = titleListBusiness;
-    console.log('case 0');
-        break;
+      break;
     case "1": titleListSelected = titleListBusiness.concat(titleListTech);
-    console.log('case 1');
-    break;
+      break;
     case "2": titleListSelected = titleListTech;
-        break;
+      break;
     default: break;
 }
 
@@ -93,25 +91,47 @@ function generateTitles(tech, industry, persona, hero, threat) {
     button.innerHTML = "Generate More";
     inputTechnology.classList.remove("blinkMe");
     inputTechnology.style.animationPlayState = "paused";
-    document.querySelector(".results").classList.add("fader")
-    document.querySelector(".results").style.animationPlayState = "running";
+    document.querySelector(".resultsList").classList.add("fader")
+    document.querySelector(".resultsList").style.animationPlayState = "running";
 
     // Generate each title
     for (let index = 0; index <= 2; index++) {
       let number = generateRandomIntegerInRange();
       let listNumber = genRanNum();
-      let paragraph = document.createElement("p");
-      paragraph.innerHTML = `${titleListSelected[number]} (${
-      titleListSelected[number].length + inputTech.length} chars)`;
-      paragraph.setAttribute("id", `result${index}`);
-      document.querySelector(".results").appendChild(paragraph);
-      titleListSelected.splice(number, 1); // removes one index
+      let titleItemLength = titleListSelected[number].length;
+      let titleItemLengthScore = undefined;
+      
+      // Evaluate title length 
+      switch (true) {
+        case titleItemLength<=40: titleItemLengthScore = "⚠️ Short";
+          break;
+        case titleItemLength>40 && titleItemLength<60 : titleItemLengthScore = "✅ Optimal";
+          break;
+        case titleItemLength>=60 : titleItemLengthScore = "❗️ Long";
+          break;
+      }
+      console.log(titleItemLength)
+
+      /* Version 1 -  Add titles and char count to a paragraph */
+        // let paragraph = document.createElement("p");
+        // paragraph.innerHTML = `${titleListSelected[number]} (${titleListSelected[number].length + inputTech.length} chars)`;
+        // paragraph.setAttribute("id", `resultItem${index}`);
+        // document.querySelector(".resultsList").appendChild(paragraph);
+
+      /* Version 2 - Add titles and char count to a table */
+        let tableElement = document.createElement("tr");
+        tableElement.innerHTML = `<td><p>${titleListSelected[number]}</p></td><td class="resultchar"> ${titleItemLengthScore} (${titleItemLength} chars)</td>`;
+        tableElement.setAttribute("id", `resultItem${index}`);
+        document.querySelector(".resultsList").appendChild(tableElement);
+        
+      /* Remove one index */
+      titleListSelected.splice(number, 1);
     }
   } else {
-    // Validation for empty Technoloty field
+    // Validation for empty Technology field
     inputTechnology.placeholder = "Hongry feed me techs ;(";
     inputTechnology.classList.remove("blinkMe");
-    void inputTechnology.offsetWidth;
+    void inputTechnology.offsetWidth; // Necessary to restart animation
     inputTechnology.classList.add("blinkMe");
     inputTechnology.style.animationPlayState = "running";
 
@@ -121,3 +141,5 @@ function generateTitles(tech, industry, persona, hero, threat) {
 button.addEventListener("click", () =>
   generateTitles(inputTechnology, inputIndustry, inputPersona, inputHero, inputThreat)
 );
+
+

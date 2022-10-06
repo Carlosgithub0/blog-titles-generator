@@ -56,7 +56,6 @@
             <option value="Ada Lovelace"></option>
             <option value="Evie"></option>
             <option value="Malu"></option>
-            <option value="Ada Lovelace"></option>
             </datalist>
         <input id="inputThreat" type="text" placeholder="write or pick threat" list="threatSelection">
         <datalist id="threatSelection">
@@ -82,17 +81,28 @@
 
 <div class="resultsWrapper">
 <h2 class="headerResults">Results</h2>
-<div class="results">  
-<p id="result1"></p>
-<p id="result2"></p>
-<p id="result3"></p>
+<div class="resultsList">  
+    <table>
+    <tr>
+        <td><p id="result1" class="resultsItem"></p></td>
+        <td><p class="resultchar"></p></td>
+    </tr>
+    <tr>
+        <td><p id="result2" class="resultsItem"></p></td>
+        <td><p class="resultchar"></p></td>
+    <tr>
+        <td><p id="result3" class="resultsItem"></p></td>
+        <td><p class="resultchar"></p></td>
+    </tr>
+    </table>
 </div>
 </div>
 </div>
 </div>
 <div class="buttonWrapper">
 <button id="buttonGenerate">Generate</button>
-</div>
+<!-- TODO <button id="buttonClear">Clear</button> -->
+</div> 
 
 <script src="index.js"></script>
 

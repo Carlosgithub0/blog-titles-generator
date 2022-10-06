@@ -14,7 +14,7 @@ body{
 }
 
 /* FORM */ 
-#mainForm, .inputAllWrapper, .inputTechWrapper, .inputExtrasWrapper,  .headerAllWrapper, .headerTechnologyWrapper, .formWrapper, .results, .resultsWrapper, .buttonWrapper {
+#mainForm, .inputAllWrapper, .inputTechWrapper, .inputExtrasWrapper,  .headerAllWrapper, .headerTechnologyWrapper, .formWrapper, .results, .resultsWrapper, .buttonWrapper, #formPersona {
     display:flex;
 }
 
@@ -32,17 +32,14 @@ body{
     flex-direction:column;
     width: 200px;
     margin:15px;
-
 }
 
 #tickmarks{
-    display:flex;
-    justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
 }
 
-#formPersona{
-display:flex;
-}
+/* BUTTON */
 
 .buttonWrapper{
   width:320px;
@@ -52,6 +49,7 @@ display:flex;
 #buttonGenerate{
   color:white;
   background-color: rgba(0, 128, 0, 0.9);
+  font-size: 130%;
 
 }
 
@@ -70,6 +68,7 @@ animation-iteration-count: 1;
   0%   {opacity:0%}
   100%  {opacity: 100;}
 }
+
 /* VALIDATION */
 
 input:required:invalid {
@@ -90,40 +89,21 @@ input:required:invalid {
   50% {opacity: 0.2;}
 }
 
-
 /* RESULTS */
 .resultsWrapper
 {background-color: rgba(0, 128, 128, 0.137);
 min-width: 600px;
-margin-left: 15px;}
+margin: 0 0 0 15px;}
 
-.results{
-margin-left: 15px;
+.resultsList{
+  margin: 0px 15px 0px 15px;
 }
 
-/* TOOLTIP */
-/* Tooltip container */
-.tooltip {
-  position: relative;
-  display: inline-block;
+td
+{
+  padding: 0px 15px 0px 0px;
 }
 
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text  */
-  position: absolute;
-  z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.resultchar{
+  font-size:70%
 }
