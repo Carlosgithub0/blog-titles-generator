@@ -12,8 +12,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
   hero.value.length == 0 ? hero.value = "Your Hero" : null;
   threat.value.length == 0 ? threat.value = "Threat" : null;
 
-  
-  // Cleans up on every submit + resets animations
+  /* Cleans up on every submit + resets animations */
   const results = document.querySelector(".resultsList");
   while (results.firstChild) {
     results.removeChild(results.lastChild);
@@ -64,15 +63,15 @@ function generateTitles(tech, industry, persona, hero, threat) {
   // Choose title list based on persona picker
   var titleListSelected = undefined;
 
-  switch (persona.value) {
-    case "0": titleListSelected = titleListBusiness;
-      break;
-    case "1": titleListSelected = titleListBusiness.concat(titleListTech);
-      break;
-    case "2": titleListSelected = titleListTech;
-      break;
-    default: break;
-}
+    switch (persona.value) {
+      case "0": titleListSelected = titleListBusiness;
+        break;
+      case "1": titleListSelected = titleListBusiness.concat(titleListTech);
+        break;
+      case "2": titleListSelected = titleListTech;
+        break;
+      default: break;
+    }
 
   // Random number generator for titles
   function generateRandomIntegerInRange(min = 0, max = titleListSelected.length - 1) {
@@ -128,7 +127,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
       titleListSelected.splice(number, 1);
     }
   } else {
-    // Validation for empty Technology field
+    // Validates empty Technology field with text and animations
     inputTechnology.placeholder = "Hongry feed me techs ;(";
     inputTechnology.classList.remove("blinkMe");
     void inputTechnology.offsetWidth; // Necessary to restart animation

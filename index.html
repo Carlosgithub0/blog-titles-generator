@@ -11,100 +11,168 @@
     <h1>Blog Idea Generator</h1>
     <div id="mainForm" onSubmit="return false";>
         <div class="formWrapper">
-            
-        <div class="headerAllWrapper">
-            <h3 class="headerPicker">🔌 Tech</h3>
-            <h3 class="headerPicker">👔 Industry</h3>  
-            <h3 class="headerPicker">😎 Hero</h3> 
-            <h3 class="headerPicker">💣 Threat</h3>  
-            <h3 class="headerPicker">👀 Persona</h3>
+            <div class="formItemWrapper">
+                <h3 class="headerPicker">🔌 Tech</h3>
+                <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection" autofocus required class="blinkMe paused">
+                    <datalist id="technologySelection">
+                        <option value="Angular"></option>
+                        <option value="Elixir"></option>
+                        <option value="Flutter"></option>
+                        <option value="Golang"></option>
+                        <option value="JavaScript"></option>
+                        <option value="Node"></option>
+                        <option value="Python"></option>
+                        <option value="React"></option>
+                        <option value="Ruby On Rails"></option>
+                        <option value="Vue"></option>
+                        </datalist>
+            </div>
+            <div class="formItemWrapper">
+                <h3 class="headerPicker">👔 Industry</h3>  
+                <input id="inputIndustry" type="text" placeholder="write or pick industry" list="industrySelection">
+                    <datalist id="industrySelection">
+                        <option value="Crypto"></option>
+                        <option value="eCommerce"></option>
+                        <option value="Healthcare"></option>
+                        <option value="HR Tech"></option>
+                        <option value="Hospitality"></option>
+                        <option value="IT"></option>
+                        <option value="PropTech"></option>
+                        <option value="Restaurants"></option>
+                        <option value="Web3"></option>
+                    </datalist>
+            </div>
+            <div class="formItemWrapper">
+                <h3 class="headerPicker">😎 Hero</h3> 
+                <input id="inputHero" type="text" placeholder="write or pick hero" list="heroSelection">
+                    <datalist id="heroSelection">
+                        <option value="My Cat"></option>
+                        <option value="Your Cat"></option>
+                        <option value="Bill Gates"></option>
+                        <option value="Ada Lovelace"></option>
+                        <option value="Evie"></option>
+                        <option value="Malu"></option>
+                    </datalist>
+            </div>
+            <div class="formItemWrapper">
+                <h3 class="headerPicker">💣 Threat</h3>  
+                <input id="inputThreat" type="text" placeholder="write or pick threat" list="threatSelection">
+                    <datalist id="threatSelection">
+                        <option value="Cyberattacks"></option>
+                        <option value="Compliance"></option>
+                        <option value="Financial"></option>
+                        <option value="Reputation"></option>
+                    </datalist>    
+            </div>
+            <div class="formItemWrapper">
+                <h3 class="headerPicker">👀 Persona</h3>
+                <div id="formPersonaControl">
+                    <input id="inputPersona" type="range" min="0" max="2" list="tickmarks" value="1">
+                    <datalist id="tickmarks">
+                        <option value="0" label="👔 Business"></option>
+                        <option value="1" label="⭕ All"></option>
+                        <option value="2" label="💻 Tech-savvy"></option>
+                    </datalist>
+                </div>
+            </div>
         </div>
-        <div class="inputAllWrapper">
-        <div class="inputTechWrapper">
-        <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection" autofocus required class="blinkMe paused">
-        <datalist id="technologySelection">
-            <option value="Angular"></option>
-            <option value="Elixir"></option>
-            <option value="Flutter"></option>
-            <option value="Golang"></option>
-            <option value="JavaScript"></option>
-            <option value="Node"></option>
-            <option value="Python"></option>
-            <option value="React"></option>
-            <option value="Ruby On Rails"></option>
-            <option value="Vue"></option>
-            </datalist>
+        <div class="resultsWrapper">
+            <h2 class="headerResults">Results</h2>
+            <div class="resultsList">  
+                <table>
+                <tr>
+                    <td><p id="result1" class="resultsItem"></p></td>
+                    <td><p class="resultchar"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="result2" class="resultsItem"></p></td>
+                    <td><p class="resultchar"></p></td>
+                <tr>
+                    <td><p id="result3" class="resultsItem"></p></td>
+                    <td><p class="resultchar"></p></td>
+                </tr>
+                </table>
+            </div>
         </div>
-        <div class="inputExtrasWrapper">
-        <input id="inputIndustry" type="text" placeholder="write or pick industry" list="industrySelection">
-        <datalist id="industrySelection">
-            <option value="Crypto"></option>
-            <option value="eCommerce"></option>
-            <option value="Healthcare"></option>
-            <option value="HR Tech"></option>
-            <option value="Hospitality"></option>
-            <option value="IT"></option>
-            <option value="PropTech"></option>
-            <option value="Restaurants"></option>
-            <option value="Web3"></option>
-            </datalist>
-        <input id="inputHero" type="text" placeholder="write or pick hero" list="heroSelection">
-        <datalist id="heroSelection">
-            <option value="My Cat"></option>
-            <option value="Your Cat"></option>
-            <option value="Bill Gates"></option>
-            <option value="Ada Lovelace"></option>
-            <option value="Evie"></option>
-            <option value="Malu"></option>
-            </datalist>
-        <input id="inputThreat" type="text" placeholder="write or pick threat" list="threatSelection">
-        <datalist id="threatSelection">
-            <option value="Cyberattacks"></option>
-            <option value="Compliance"></option>
-            <option value="Financial"></option>
-            <option value="Reputation"></option>
-            </datalist>    
-        </div>
-    <div id="formPersona">
-        <div id="formPersonaControl">
-        <input id="inputPersona" type="range" min="0" max="2" list="tickmarks" value="1">
-        <datalist id="tickmarks">
-            <option value="0" label="👔 Business"></option>
-            <option value="1" label="All"></option>
-            <option value="2" label="💻 Tech-savvy"></option>
-        </datalist>
     </div>
-</div>
-</form>
+        <div class="buttonWrapper">
+            <button id="buttonGenerate" class="disabled">Generate</button>
+            <!-- TODO <button id="buttonClear">Clear</button> -->
+        </div> 
+    </div>
 
-</div>
-
-<div class="resultsWrapper">
-<h2 class="headerResults">Results</h2>
-<div class="resultsList">  
-    <table>
-    <tr>
-        <td><p id="result1" class="resultsItem"></p></td>
-        <td><p class="resultchar"></p></td>
-    </tr>
-    <tr>
-        <td><p id="result2" class="resultsItem"></p></td>
-        <td><p class="resultchar"></p></td>
-    <tr>
-        <td><p id="result3" class="resultsItem"></p></td>
-        <td><p class="resultchar"></p></td>
-    </tr>
-    </table>
-</div>
-</div>
-</div>
-</div>
-<div class="buttonWrapper">
-<button id="buttonGenerate">Generate</button>
-<!-- TODO <button id="buttonClear">Clear</button> -->
-</div> 
 
 <script src="index.js"></script>
 
 </body>
 </html>
+
+<!--
+
+<div id="mainForm" onSubmit="return false";>
+    <div class="formWrapper">
+    <div class="headerAllWrapper">
+        <h3 class="headerPicker">🔌 Tech</h3>
+        <h3 class="headerPicker">👔 Industry</h3>  
+        <h3 class="headerPicker">😎 Hero</h3> 
+        <h3 class="headerPicker">💣 Threat</h3>  
+        <h3 class="headerPicker">👀 Persona</h3>
+    </div>
+    <div class="inputAllWrapper">
+    <div class="inputTechWrapper">
+    <input id="inputTechnology" type="text" placeholder="write or pick technology" list="technologySelection" autofocus required class="blinkMe paused">
+    <datalist id="technologySelection">
+        <option value="Angular"></option>
+        <option value="Elixir"></option>
+        <option value="Flutter"></option>
+        <option value="Golang"></option>
+        <option value="JavaScript"></option>
+        <option value="Node"></option>
+        <option value="Python"></option>
+        <option value="React"></option>
+        <option value="Ruby On Rails"></option>
+        <option value="Vue"></option>
+        </datalist>
+    </div>
+    <div class="inputExtrasWrapper">
+    <input id="inputIndustry" type="text" placeholder="write or pick industry" list="industrySelection">
+    <datalist id="industrySelection">
+        <option value="Crypto"></option>
+        <option value="eCommerce"></option>
+        <option value="Healthcare"></option>
+        <option value="HR Tech"></option>
+        <option value="Hospitality"></option>
+        <option value="IT"></option>
+        <option value="PropTech"></option>
+        <option value="Restaurants"></option>
+        <option value="Web3"></option>
+        </datalist>
+    <input id="inputHero" type="text" placeholder="write or pick hero" list="heroSelection">
+    <datalist id="heroSelection">
+        <option value="My Cat"></option>
+        <option value="Your Cat"></option>
+        <option value="Bill Gates"></option>
+        <option value="Ada Lovelace"></option>
+        <option value="Evie"></option>
+        <option value="Malu"></option>
+        </datalist>
+    <input id="inputThreat" type="text" placeholder="write or pick threat" list="threatSelection">
+    <datalist id="threatSelection">
+        <option value="Cyberattacks"></option>
+        <option value="Compliance"></option>
+        <option value="Financial"></option>
+        <option value="Reputation"></option>
+        </datalist>    
+    </div>
+<div id="formPersona">
+    <div id="formPersonaControl">
+    <input id="inputPersona" type="range" min="0" max="2" list="tickmarks" value="1">
+    <datalist id="tickmarks">
+        <option value="0" label="👔 Business"></option>
+        <option value="1" label="All"></option>
+        <option value="2" label="💻 Tech-savvy"></option>
+    </datalist>
+</div>
+</div>
+</div>
+-->

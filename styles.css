@@ -14,8 +14,18 @@ body{
 }
 
 /* FORM */ 
-#mainForm, .inputAllWrapper, .inputTechWrapper, .inputExtrasWrapper,  .headerAllWrapper, .headerTechnologyWrapper, .formWrapper, .results, .resultsWrapper, .buttonWrapper, #formPersona {
-    display:flex;
+#mainForm, .formWrapper{
+  display:flex;
+}
+
+.formWrapper{
+  flex-direction: column;
+}
+
+.formItemWrapper{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
 }
 
 .headerAllWrapper, .headerTechnologyWrapper, .inputAllWrapper, .inputExtrasWrapper, .results, .resultsWrapper, .buttonWrapper
@@ -23,30 +33,40 @@ body{
   flex-direction: column;
 }
 
+input[type="text"]{
+  height:19px
+
+}
+
 .headerPicker, .headerResults, input[type="text"]{
     margin:15px;
 }
 
 #formPersonaControl{
-    display:flex;
-    flex-direction:column;
-    width: 200px;
-    margin:15px;
+  display:flex;
+  flex-direction: column-reverse;
+  align-content: space-between;
+  align-items: stretch;
 }
 
 #tickmarks{
+  font-size: 70%;
   display:flex;
-  justify-content:space-between;
+  justify-content: space-between;
+}
+
+#inputPersona{
+  min-width: 200px;
 }
 
 /* BUTTON */
 
 .buttonWrapper{
-  width:320px;
-  margin: 15px;
+    margin: 15px;
 }
 
 #buttonGenerate{
+  width:320px;
   color:white;
   background-color: rgba(0, 128, 0, 0.9);
   font-size: 130%;
@@ -57,17 +77,10 @@ body{
   background-color:rgb(0, 128, 0, 0.75);
 }
 
-.fader {
-animation: fader;
-animation-duration: 0.2s;
-animation-timing-function: linear;
-animation-iteration-count: 1;
-}
+/* .disabled {
+  background-color:grey !important;
+} */
 
-@keyframes fader {
-  0%   {opacity:0%}
-  100%  {opacity: 100;}
-}
 
 /* VALIDATION */
 
@@ -107,3 +120,15 @@ td
 .resultchar{
   font-size:70%
 }
+
+.fader {
+  animation: fader;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  }
+  
+  @keyframes fader {
+    0%   {opacity:0%}
+    100%  {opacity: 100;}
+  }
