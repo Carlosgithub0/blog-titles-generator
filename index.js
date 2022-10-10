@@ -41,7 +41,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
     `${genRanNum()} Warning Signs That Your ${tech.value} Project is in Danger${industry.value}`,
     `${genRanNum()} Things Your ${tech.value} Developers Won’t Tell You${industry.value}`,
     `${genRanNum()} Little-Known Factors That Could Affect Your ${tech.value} Project${industry.value}`,
-    `${tech.value} Alert: The New ${threat.value} to Avoid ${industry.value}`,
+    `${tech.value} Alert: The New ${threat.value} Risk to Avoid ${industry.value}`,
     `Can’t Keep Up? ${genRanNum()} Ways to Simplify Your ${tech.value} Workload`, 
     `How to Take Charge of Your Day In ${tech.value}`,
     `${genRanNum()} Shortcuts for Completing Tedious ${tech.value} Tasks in Record Time`,
@@ -50,15 +50,15 @@ function generateTitles(tech, industry, persona, hero, threat) {
     `${hero.value+"'s"} Top ${genRanNum()} Tips for ${tech.value}${industry.value}`,
     `${genRanNum()} Secrets of Microsoft ${tech.value} Developers${industry.value}`,
     `Do You Make These ${genRanNum()} ${tech.value} Mistakes${industry.value}?`,
-    `${genRanNum()} ${tech.value} Mistakes That Make You Look Like a Newbie`,
+    `${genRanNum()} ${tech.value} Mistakes${industry.value} That Make You Look Like a Newbie`,
   ];
 
   const titleListBusiness = [
    `Get Rid of This ${tech.value} ${threat.value} Risk${industry.value} Once and for All`,
    `What This Case Study Can Teach Us About ${tech.value}${industry.value}`,
-   `${genRanNum()} ${tech.value} Mistakes That Can Derail Your Project`,
+   `${genRanNum()} ${tech.value}${industry.value} Mistakes That Can Derail Your Project`,
    `The Shocking Truth About ${tech.value}${industry.value}`,
-   `Don't Gamble with Your ${tech.value} Project: ${genRanNum()} Ways to Protect Yourself${industry.value}`,
+   `Don't Gamble With Your ${tech.value} Project: ${genRanNum()} Ways to Protect Yourself${industry.value}`,
    `Can We Really Trust ${tech.value} Developers${industry.value}?`,
    `Lies ${tech.value} Developers Like to Tell${industry.value}`,
    `How Safe Is Your ${tech.value} Stack From ${threat.value}${industry.value}?`,
@@ -87,7 +87,6 @@ function generateTitles(tech, industry, persona, hero, threat) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-
   // If tech field not empty 
   if (tech.value.length !== 0) {
     /* Fallbacks */ 
@@ -96,7 +95,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
     
     /* UX - Add helper text, play animations */
     buttonGenerate.innerHTML = "Generate More";
-    buttonClear.style="display:block";
+    buttonClear.style="display:block";  
     buttonClear.classList.add("fader")
     buttonClear.classList.remove("disabled")
     inputTechnology.classList.remove("blinkMe");
