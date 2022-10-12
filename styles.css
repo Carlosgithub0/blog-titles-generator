@@ -19,7 +19,7 @@ span>a{
   text-decoration: none;
   padding:0 3.5px 0 3.5px;
   cursor:help;
-  border: 1px solid;
+  border: 0px solid;
   border-radius: 100%;
   
 }
@@ -119,13 +119,14 @@ input:required:invalid {
   animation: blinker 0.3s linear 1;
 }
 
+@keyframes blinker {
+  50% {opacity: 0.2;}
+}
+
 .paused {
   animation-play-state: paused;
 }
 
-@keyframes blinker {
-  50% {opacity: 0.2;}
-}
 
 /* RESULTS */
 .resultsWrapper

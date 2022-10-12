@@ -1,4 +1,3 @@
-// FIXME - field values not registered after clear button
 const form = document.querySelector("#mainForm");
 const buttonGenerate = document.querySelector("#buttonGenerate");
 const buttonClear = document.querySelector('#buttonClear');
@@ -13,9 +12,22 @@ const optionsIndustry = document.querySelector("#industrySelection");
 const optionsHero = document.querySelector("#heroSelection");
 const optionsThreat = document.querySelector("#threatSelection");
 
+function reset_animation(x) {
+  x.style.animation = 'none';
+  x.offsetHeight; /* trigger reflow */
+  x.style.animation = null; 
+}
+
+function classToggle (x) {
+  x.classList.toggle("disabled");
+}
 
 function generateTitles(tech, industry, persona, hero, threat) {
   industry = industry || " In IT "; // TODO debug why it's not passing the default value
+
+  /* Fallbacks */ 
+  hero.value.length == 0 ? hero.value = "Your Hero" : null; 
+  threat.value.length == 0 ? threat.value = "Threat" : null;
 
   /* Cleans up on every submit + resets animations */
   const results = document.querySelector(".resultsList");
@@ -35,7 +47,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
   tech.value = capitalizeFirstLetter(tech.value);
   industry.value = capitalizeFirstLetter(industry.value);
 
-  // List of titles
+  // Lists of titles
   const titleListTech = [
     `Top ${genRanNum()} Apps Created With ${tech.value} in 2022${industry.value}`,
     `${genRanNum()} Warning Signs That Your ${tech.value} Project is in Danger${industry.value}`,
@@ -96,10 +108,6 @@ function generateTitles(tech, industry, persona, hero, threat) {
 
   // If tech field not empty 
   if (tech.value.length !== 0) {
-    /* Fallbacks */ 
-    hero.value.length == 0 ? hero.value = "Your Hero" : null; 
-    threat.value.length == 0 ? threat.value = "Threat" : null;
-    
     /* UX - Add helper text, play animations */
     buttonGenerate.innerHTML = "Generate More";
     buttonClear.style="display:block";  
@@ -134,7 +142,6 @@ function generateTitles(tech, industry, persona, hero, threat) {
 
       /* Version 2 - Add titles and char count to a table */
         let titleItem = titleListSelected[number]; 
-        let titleItemURL = titleItem.replace(" ","-");
         let tableElement = document.createElement("tr");
         tableElement.innerHTML = `<td><p>${titleItem}</p></td><td class="resultDetail"> ${titleItemLengthScore} (${titleItemLength} chars)</td><td><a class="resultDetail" href="https://www.google.com/search?q=${titleItem}" target="_blank">Search Google</a></td>`;
         tableElement.setAttribute("id", `resultItem${index}`);
@@ -144,13 +151,10 @@ function generateTitles(tech, industry, persona, hero, threat) {
       titleListSelected.splice(number, 1);
     }
   } else {
+
     /* Validates empty Technology field with text and animations */
     inputTechnology.placeholder = "Hongry feed me techs ;(";
-    inputTechnology.classList.remove("blinkMe");
-    void inputTechnology.offsetWidth; // Necessary to restart animation
-    inputTechnology.classList.add("blinkMe");
-    inputTechnology.style.animationPlayState = "running";
-
+    reset_animation(inputTechnology);
   }
 }
 
@@ -174,9 +178,6 @@ function randomizeInput() {
   buttonGenerate.classList.remove("disabled"); // TODO hotfix for enabling the button (ideally, the listener should notice it)
   buttonClear.classList.remove ("disabled");// TODO hotfix for enabling the button (ideally, the listener should notice it)
   buttonClear.style="display:block";
-
-  
-
 
   }
 
