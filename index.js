@@ -54,6 +54,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
   ];
 
   const titleListBusiness = [
+   `From A to Z: What is ${tech.value}?`,
    `Get Rid of This ${tech.value} ${threat.value} Risk${industry.value} Once and for All`,
    `What This Case Study Can Teach Us About ${tech.value}${industry.value}`,
    `${genRanNum()} ${tech.value}${industry.value} Mistakes That Can Derail Your Project`,
@@ -64,6 +65,12 @@ function generateTitles(tech, industry, persona, hero, threat) {
    `How Safe Is Your ${tech.value} Stack From ${threat.value}${industry.value}?`,
 
   ];
+
+/* WIP */
+  const titleListHR = [
+    `What's the Salary of a ${tech.value} Specialist?`,
+
+  ]
 
   // Choose title list based on persona picker
   var titleListSelected = undefined;
