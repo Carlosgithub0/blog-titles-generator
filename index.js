@@ -63,6 +63,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
     `${genRanNum()} Secrets of Microsoft ${tech.value} Developers${industry.value}`,
     `Do You Make These ${genRanNum()} ${tech.value} Mistakes${industry.value}?`,
     `${genRanNum()} ${tech.value} Mistakes${industry.value} That Make You Look Like a Newbie`,
+
   ];
 
   const titleListBusiness = [
@@ -134,14 +135,7 @@ function generateTitles(tech, industry, persona, hero, threat) {
           break;
       }
 
-      /* Version 1 -  Add titles and char count to a paragraph */
-        // let paragraph = document.createElement("p");
-        // paragraph.innerHTML = `${titleListSelected[number]} (${titleListSelected[number].length + inputTech.length} chars)`;
-        // paragraph.setAttribute("id", `resultItem${index}`);
-        // document.querySelector(".resultsList").appendChild(paragraph);
-
-      /* Version 2 - Add titles and char count to a table */
-        let titleItem = titleListSelected[number]; 
+         let titleItem = titleListSelected[number]; 
         let tableElement = document.createElement("tr");
         tableElement.innerHTML = `<td><p>${titleItem}</p></td><td class="resultDetail"> ${titleItemLengthScore} (${titleItemLength} chars)</td><td><a class="resultDetail" href="https://www.google.com/search?q=${titleItem}" target="_blank">Search Google</a></td>`;
         tableElement.setAttribute("id", `resultItem${index}`);
